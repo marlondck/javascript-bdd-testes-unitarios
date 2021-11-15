@@ -20,6 +20,8 @@
 describe("Oparação de Adição", () => {});
 ```
 
+### Specs
+
 - Specs são os testes que validam uma suíte de testes, possuí um a palavra reservada `it`
 
 ```javascript
