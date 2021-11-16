@@ -1,0 +1,14 @@
+{
+  "name": "javascript-bdd-testes-unitarios",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/marlondck/javascript-bdd-testes-unitarios.git",
+  "author": "marlondck <15050029+marlondck@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "devDependencies": {
+    "jasmine": "^3.10.0"
+  }
+}
