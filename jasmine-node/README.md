@@ -29,7 +29,35 @@ Inicialize o karma com o comando e responda as questões do terminal conforme se
 
 ```javascript
  "scripts": {
-    "test": "karma start --single-run",
-    "test-dev": "karma start"
+    "test": "karma start --no-single-run karma.config.js",
+    "test-dev": "karma start karma.config.js"
   },
 ```
+
+## Browserify
+
+- Os testes usam como padrão de importação o require, porém os navegadores não reconhecem estas chamadas, ai entra o browserify que faz a conversão então automaticamente para `tags html <script>`.
+
+- Instale usando o comando `yarn add -D browserify watchify karma-browserify`
+- Altere o arquivo do arquivo `karma-config.js` para:
+
+```javascript
+frameworks: ['jasmine', 'browserify'],
+files: [
+    'spec/**/*Spec.js',
+    'spec/helpers/**/SpecHelper.js'
+  ],
+preprocessors: {
+      "spec/**/*Spec.js": ["browserify"],
+    },
+    browsers: ["Chrome", "Chrome_without_security"],
+    customLaunchers: {
+      Chrome_without_security: {
+        base: "Chrome",
+        flags: ["--disable-web-security", "--disable-site-isolation-trials"],
+      },
+    },
+```
+
+Com isso sempre que rodar `yarn run test`
+Ele abrirá o navegador, executará os testes automaticamente.

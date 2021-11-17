@@ -1,69 +1,62 @@
 // Karma configuration
 // Generated on Wed Nov 17 2021 10:43:04 GMT-0400 (Horário Padrão do Amazonas)
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
-
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
-
+    basePath: "",
 
     // frameworks to use
     // available frameworks: https://www.npmjs.com/search?q=keywords:karma-adapter
-    frameworks: ['jasmine'],
-
+    frameworks: ["jasmine", "browserify"],
 
     // list of files / patterns to load in the browser
-    files: [
-      'spec/**/*Spec.js'
-    ],
-
+    files: ["spec/**/*Spec.js", "spec/helpers/**/SpecHelper.js"],
 
     // list of files / patterns to exclude
-    exclude: [
-    ],
-
+    exclude: [],
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://www.npmjs.com/search?q=keywords:karma-preprocessor
     preprocessors: {
+      "spec/**/*Spec.js": ["browserify"],
     },
-
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
     // available reporters: https://www.npmjs.com/search?q=keywords:karma-reporter
-    reporters: ['progress'],
-
+    reporters: ["progress"],
 
     // web server port
     port: 9876,
 
-
     // enable / disable colors in the output (reporters and logs)
     colors: true,
-
 
     // level of logging
     // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
     logLevel: config.LOG_INFO,
 
-
     // enable / disable watching file and executing tests whenever any file changes
     autoWatch: true,
 
-
     // start these browsers
     // available browser launchers: https://www.npmjs.com/search?q=keywords:karma-launcher
-    browsers: ['Chrome'],
-
-
+    browsers: ["Chrome", "Chrome_without_security"], //// You may use 'ChromeCanary', 'Chromium' or any other supported browser
+    // you can define custom flags
+    customLaunchers: {
+      Chrome_without_security: {
+        base: "Chrome",
+        flags: ["--disable-web-security", "--disable-site-isolation-trials"],
+        // chromeDataDir: path.resolve(__dirname, ".chrome"),
+      },
+    },
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
     singleRun: false,
 
     // Concurrency level
     // how many browser instances should be started simultaneously
-    concurrency: Infinity
-  })
-}
+    concurrency: Infinity,
+  });
+};
