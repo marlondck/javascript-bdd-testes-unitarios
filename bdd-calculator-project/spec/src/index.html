@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora BDD</title>
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+  <div class="calculator">
+    <div class="display"></div>
+    <button type="button" class="button triple" label="AC" onclick="limpar()">AC</button>
+    <button type="button" class="button operation" label="/" onclick="defineOperacao('/')">/</button>
+    <button type="button" class="button" label="7" onclick="adicionaNumero(7)">7</button>
+    <button type="button" class="button" label="8" onclick="adicionaNumero(8)">8</button>
+    <button type="button" class="button" label="9" onclick="adicionaNumero(9)">9</button>
+    <button type="button" class="button operation" label="*" onclick="defineOperacao('*')">*</button>
+    <button type="button" class="button" label="4" onclick="adicionaNumero(4)">4</button>
+    <button type="button" class="button" label="5" onclick="adicionaNumero(5)">5</button>
+    <button type="button" class="button" label="6" onclick="adicionaNumero(6)">6</button>
+    <button type="button" class="button operation" label="-" onclick="defineOperacao('-')">-</button>
+    <button type="button" class="button" label="1" onclick="adicionaNumero(1)">1</button>
+    <button type="button" class="button" label="2" onclick="adicionaNumero(2)">2</button>
+    <button type="button" class="button" label="3" onclick="adicionaNumero(3)">3</button>
+    <button type="button" class="button operation" label="+" onclick="defineOperacao('+')">+</button>
+    <button type="button" class="button double" label="0" onclick="adicionaNumero(0)">0</button>
+    <button type="button" class="button" label="." onclick="adicionaNumero('.')">.</button>
+    <button type="button" class="button operation" label="=" onclick="calcular()">=</button>
+  </div>
+  </div>
+
+  <script src="./js/calculadora.js"></script>
+  <script src="./js/utils.js"></script>
+</body>
+
+</html>
