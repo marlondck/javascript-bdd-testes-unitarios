@@ -79,3 +79,8 @@ Desenvolvimento guiado por comportamentos, é um processo de criação de testes
 ![screenshot](bdd.png?raw=true "screenshot")
 
 - Para criar um fluxo de testes automatizados no `Nodejs` pode seguir este tutorial [aqui](jasmine-node/README.md)
+
+## Projeto Calculadora Utilizando BDD
+
+![screenshot](calc.png?raw=true "screenshot")
+[Acesse aqui](bdd-calculator-project)
