@@ -1,0 +1,20 @@
+{
+  "name": "bdd-calculator-project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "karma start --single-run",
+    "test-dev": "karma start",
+    "test-jasmine": "jasmine"
+  },
+  "devDependencies": {
+    "browserify": "^17.0.0",
+    "jasmine": "^3.10.0",
+    "karma": "^6.3.9",
+    "karma-browserify": "^8.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^4.0.1",
+    "watchify": "^4.0.0"
+  }
+}
