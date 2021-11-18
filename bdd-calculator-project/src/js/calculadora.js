@@ -20,7 +20,12 @@ const calculadora = {
     }
     return n1 / n2;
   },
-  multiplicar: (n1, n2) => 0,
+  multiplicar: (n1, n2) => {
+    if (isNaN(n1) || isNaN(n2)) {
+      return 0;
+    }
+    return n1 * n2;
+  },
 };
 
 // impedir o 'require' seja executado no browser
